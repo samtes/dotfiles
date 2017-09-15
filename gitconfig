@@ -1,0 +1,12 @@
+[user]
+	name = Samuel Weldemariam
+	email = sweldemariam@gmail.com
+[color]
+	ui = auto
+[core]
+	excludesfile = ~/.gitignore
+	editor = vim
+[github]
+	user = samtes
+[push]
+	default = simple
