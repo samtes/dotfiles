@@ -179,9 +179,18 @@ set wildmenu
 " Wrap long lines
 set wrap
 
-colorscheme nightwish
+colorscheme woju
+
 " This needs to be after colorschemes >>
 highlight NERDTreeDir ctermfg=Gray
+
+" ColorStepper
+source ~/.vim/bundle/colorstepper/colorstepper.vim
+
+" ColorStepper Keys
+nmap <F6> <Plug>ColorstepPrev
+nmap <F7> <Plug>ColorstepNext
+nmap <S-F7> <Plug>ColorstepReload
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Split Control
@@ -238,7 +247,7 @@ if exists("&undodir")
 endif
 
 " Use UTF-8 encoding
-set encoding=utf-8
+set encoding=utf8
 
 " Don't add empty newlines at the end of files
 set noeol
@@ -310,7 +319,7 @@ autocmd BufReadPost *
 " Miscellaneous
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
-" Toggle paste mode on and off
+" Toggle :set guifont?paste mode on and off
 map <leader>pp :setlocal paste!<cr>
 
 " Fast saving
@@ -400,7 +409,7 @@ map <silent> <LocalLeader>nf :NERDTreeFocus<CR>
 " NERDTree General Highlighting & Style
 function! NERDTreeHighlightFile(extension, fg, bg, guifg, guibg)
   exec 'autocmd FileType nerdtree highlight ' . a:extension .' ctermbg='. a:bg .' ctermfg='. a:fg .' guibg='. a:guibg .' guifg='. a:guifg
-  exec 'autocmd FileType nerdtree syn match ' . a:extension .' #^\s\+.*'.  a:extension .'$#'
+  exec 'autocmd FileType nerdtree syn MATCH ' . a:extension .' #^\s\+.*'.  a:extension .'$#'
 endfunction
 
 call NERDTreeHighlightFile('jade', 'green', 'none', 'green', '#151515')
